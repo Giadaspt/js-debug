@@ -30,8 +30,8 @@ export default {
             }
 
             return this.discs.filter(
-                (item) =>   ( (item.genre === this.selectedGenre) || (this.selectedGenre === "") ) && 
-                            ( (item.author === this.selectedAuthor) || (this.selectedAuthor === "") )
+                (item) =>    (item.genre === this.selectedGenre)  && 
+                            (item.author === this.selectedAuthor)
             );
         },
     },
@@ -46,7 +46,6 @@ export default {
         axios
             .get("https://flynn.boolean.careers/exercises/api/array/music")
             .then((res) => {
-                let discs = {};
                 this.discs = res.data.response;
 
                 this.discs.forEach((disc) => {
@@ -54,7 +53,7 @@ export default {
                         this.genres.push(disc.genre);
                     }
 
-                    if (!this.authors.includes(discs.author)) {
+                    if (!this.authors.includes(disc.author)) {
                         this.authors.push(disc.author);
                     }
                 });

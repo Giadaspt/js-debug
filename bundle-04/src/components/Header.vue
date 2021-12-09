@@ -7,14 +7,14 @@
             <select
                 v-model="genreFilter"
                 @change="$emit('changedGenere', genreFilter)"
-                class="form-select mt-3"
-            >
-                <option value="">Seleziona un genere</option>
+                class="form-select mt-3">
+                <!--copiato e incollato correttamente changedGenere in App -->
+                <option value="genre">Seleziona un genere</option>
+                <!-- messo genre nella value -->
                 <option
                     v-for="(genre, index) in genres"
                     :key="index"
-                    :value="genre"
-                >
+                    :value="genre">
                     {{ genre }}
                 </option>
             </select>
@@ -23,15 +23,13 @@
             <select
                 v-model="authorFilter"
                 @change="$emit('changedAuthor', authorFilter)"
-                class="form-select mt-3"
-            >
-                <option value="">Seleziona un autore</option>
+                class="form-select mt-3">
+                <option value="author">Seleziona un autore</option>
                 <option
                     v-for="(author, index) in authors"
                     :key="index"
-                    :value="author"
-                >
-                    {{ genre }}
+                    :value="author">
+                    {{author}}
                 </option>
             </select>
 
@@ -50,7 +48,7 @@ export default {
         return {
             genreFilter: "",
             authorFilter: "",
-        };
+        }
     },
     methods: {},
 };
