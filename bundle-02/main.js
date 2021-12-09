@@ -43,64 +43,75 @@ printColorsNumber();
 
 //ESERCIZIO 3
 function addNumbers() {
-    const userNumber = prompt('Inserisci un numero');
+    const userNumber = parseInt(prompt('Inserisci un numero')) ;
     const total = userNumber + 12;
 
     console.log(`Il risultato finale è ${total}`);
+    return total
+
 }
 addNumbers();
+// 1. questa funzione fa inserire un numero all'utente per poi aggiungerci 12. 
+// 2. non ci sono errori di sintassi
+// 3. si, se non viene aggiunto parseint il numero inserito vien considerato come una stringa e non un numero quindi invece di avere una somma sio avranno solamente due numeri concatenati e se non viene messo il return la funzione non può essere invocata
 
 
-// ESERCIZIO 4
-// function checkAccess() {
-//     const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
-//     const userEmail = prompt('Inserisci il tuo indirizzo email');
+//ESERCIZIO 4
+function checkAccess() {
+    const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
+    const userEmail = prompt('Inserisci il tuo indirizzo email');
 
-//     let grantAccess = 'false';
+    let grantAccess = false;
 
-//     if (addresses.includes(userEmail)) {
-//         grantAccess = 'true';
-//     }
+    if (addresses.includes(userEmail)) {
+        grantAccess = true;
+    }
 
-//     if (grantAccess === true) {
-//         console.log('Accesso consentito!');
-//     } else {
-//         console.log('Accesso negato!');
-//     }
-// }
-// checkAccess();
+    if (grantAccess) {
+        console.log('Accesso consentito!');
+    } else {
+        console.log('Accesso negato!');
+    }
+    
+    return grantAccess 
+
+}
+checkAccess();
+// 1. questa funzione serve per dare l'accesso o no all'utente che inserisce un email che deve essere uguale a una di quelle nell'array
+// 2. i booleani non devono esser messi tra apici perchè altrimenti diventano solo delle stringe
+// 3. bisogna mettere il return per invocare la funzione
 
 
 // ESERCIZIO 5 (suggerimento: c'è un solo errore)
 
-// function checkAccessImproved() {
-//     const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
+function checkAccessImproved() {
+    const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
 
-//     const userEmail = prompt('Inserisci il tuo indirizzo email');
+    const userEmail = prompt('Inserisci il tuo indirizzo email');
 
-//     let grantAccess = false;
+    let grantAccess = false;
 
-//     for (let i = 0; i < addresses.length; i++) {
-//      const email = addresses[i];
+    for (let i = 0; i < addresses.length; i++) {
+     const email = addresses[i];
         
-//       if (userEmail.length > 5) {
+      if (userEmail.length > 5) {
             
-//         if (email === userEmail) {
-//         grantAccess = 'true';            
+        if (email === userEmail) {
+        grantAccess = 'true';            
             
-//       }
+      }
         
-//     }
+    }
 
-//     if (grantAccess) {
-//         console.log('Accesso consentito!');
-//     } else {
-//         console.log('Accesso negato!');
-//     }
-//     }
-// };
+    if (grantAccess) {
+        console.log('Accesso consentito!');
+    } else {
+        console.log('Accesso negato!');
+    }
+    }
+};
 
-// checkAccessImproved();
+checkAccessImproved();
 
 // 1. questa funzione serve per dare l'accesso o no, inserendo una email. Viene chiesto all'utente di inserire il suo indirizzo email, se l'email deve avere una lunghezza maggiore di 5 caratteri e quella inserita dall'utente deve essere uguale a quella nell'array altrimenti "Accesso negato!", se rispetta tutti i parametri detti sopra l'utente può effettaure l'acesso "Accesso consentito!"
 // 2. Mancava la chiusura delle graffe della funzione, quindi l'errore era puramente di sintassi.
