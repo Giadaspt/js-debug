@@ -1,4 +1,4 @@
-# js-debug
+# bundle-04
 
 ## Project setup
 ```
